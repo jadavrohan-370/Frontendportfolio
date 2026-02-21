@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref, reactive } from "vue";
 import { Send, CheckCircle } from "lucide-vue-next";
-import StudioButton from "../../shared/components/StudioButton.vue";
 
 const props = defineProps<{ id?: string }>();
 
