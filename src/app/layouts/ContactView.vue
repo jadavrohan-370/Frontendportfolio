@@ -339,6 +339,6 @@ input:focus,
 textarea:focus {
   box-shadow:
     0 0 0 0.5px var(--color-accent),
-    0 0 20px rgba(127, 90, 240, 0.15);
+    0 0 20px rgba(30, 64, 175, 0.2);
 }
 </style>

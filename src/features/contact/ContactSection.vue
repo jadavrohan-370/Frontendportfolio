@@ -59,7 +59,7 @@ const handleSubmit = async () => {
         >
           Contact
         </h2>
-        <h3 class="text-5xl md:text-7xl font-bold tracking-tight">
+        <h3 class="text-5xl md:text-7xl font-bold tracking-tight text-text">
           Let's build <br />
           something <span class="text-neon">Legendary.</span>
         </h3>
@@ -73,13 +73,13 @@ const handleSubmit = async () => {
               v-model="form.name"
               type="text"
               placeholder="Full Name"
-              class="w-full bg-surface border border-blue-900/5 rounded-2xl px-6 py-5 outline-none focus:border-accent transition-all duration-500 placeholder:text-muted/40 text-[#1E3A8A]"
+              class="w-full bg-surface border border-accent/20 rounded-2xl px-6 py-5 outline-none focus:border-accent transition-all duration-500 placeholder:text-muted/40 text-text"
               :class="{ 'border-red-500/30': errors.name }"
             />
             <div
-              class="absolute inset-0 rounded-2xl bg-accent-red opacity-0 blur-xl transition-opacity duration-500 pointer-events-none -z-10 group-focus-within:opacity-10"
+              class="absolute inset-0 rounded-2xl bg-neon opacity-0 blur-xl transition-opacity duration-500 pointer-events-none -z-10 group-focus-within:opacity-20"
             ></div>
-            <p v-if="errors.name" class="text-xs text-red-500 mt-2 px-2">
+            <p v-if="errors.name" class="text-xs text-neon mt-2 px-2">
               {{ errors.name }}
             </p>
           </div>
@@ -90,13 +90,13 @@ const handleSubmit = async () => {
               v-model="form.email"
               type="email"
               placeholder="Email Address"
-              class="w-full bg-surface border border-blue-900/5 rounded-2xl px-6 py-5 outline-none focus:border-accent transition-all duration-500 placeholder:text-muted/40 text-[#1E3A8A]"
+              class="w-full bg-surface border border-accent/20 rounded-2xl px-6 py-5 outline-none focus:border-accent transition-all duration-500 placeholder:text-muted/40 text-text"
               :class="{ 'border-red-500/30': errors.email }"
             />
             <div
-              class="absolute inset-0 rounded-2xl bg-accent-red opacity-0 blur-xl transition-opacity duration-500 pointer-events-none -z-10 group-focus-within:opacity-10"
+              class="absolute inset-0 rounded-2xl bg-neon opacity-0 blur-xl transition-opacity duration-500 pointer-events-none -z-10 group-focus-within:opacity-20"
             ></div>
-            <p v-if="errors.email" class="text-xs text-red-500 mt-2 px-2">
+            <p v-if="errors.email" class="text-xs text-neon mt-2 px-2">
               {{ errors.email }}
             </p>
           </div>
@@ -108,13 +108,13 @@ const handleSubmit = async () => {
             v-model="form.message"
             rows="6"
             placeholder="Tell us about your project..."
-            class="w-full bg-surface border border-blue-900/5 rounded-2xl px-6 py-5 outline-none focus:border-accent transition-all duration-500 placeholder:text-muted/40 text-[#1E3A8A] resize-none"
+            class="w-full bg-surface border border-accent/20 rounded-2xl px-6 py-5 outline-none focus:border-accent transition-all duration-500 placeholder:text-muted/40 text-text resize-none"
             :class="{ 'border-red-500/30': errors.message }"
           ></textarea>
           <div
-            class="absolute inset-0 rounded-2xl bg-accent-red opacity-0 blur-xl transition-opacity duration-500 pointer-events-none -z-10 group-focus-within:opacity-10"
+            class="absolute inset-0 rounded-2xl bg-neon opacity-0 blur-xl transition-opacity duration-500 pointer-events-none -z-10 group-focus-within:opacity-20"
           ></div>
-          <p v-if="errors.message" class="text-xs text-red-500 mt-2 px-2">
+          <p v-if="errors.message" class="text-xs text-neon mt-2 px-2">
             {{ errors.message }}
           </p>
         </div>
@@ -124,7 +124,7 @@ const handleSubmit = async () => {
             v-if="!isSuccess"
             type="submit"
             :disabled="isSubmitting"
-            class="group relative flex items-center justify-center gap-3 px-12 py-5 bg-[#1E3A8A] text-white font-black rounded-full overflow-hidden transition-all duration-500 disabled:opacity-50 hover:pr-14"
+            class="group relative flex items-center justify-center gap-3 px-12 py-5 bg-gradient-to-r from-neon to-accent text-white font-black rounded-full overflow-hidden transition-all duration-500 disabled:opacity-50 hover:pr-14"
           >
             <span class="relative z-10 uppercase tracking-widest text-xs">
               {{ isSubmitting ? "Sending..." : "Send Message" }}
@@ -134,7 +134,7 @@ const handleSubmit = async () => {
               class="relative z-10 w-4 h-4 transition-all duration-500 transform group-hover:translate-x-1 group-hover:-translate-y-1"
             />
             <div
-              class="absolute inset-0 bg-accent-red scale-y-0 group-hover:scale-y-100 origin-bottom transition-transform duration-500 ease-out"
+              class="absolute inset-0 bg-neon scale-y-0 group-hover:scale-y-100 origin-bottom transition-transform duration-500 ease-out"
             ></div>
           </button>
           <div
