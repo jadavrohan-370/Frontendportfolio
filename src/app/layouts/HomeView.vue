@@ -4,8 +4,19 @@ import TechStack from "../../features/techstack/TechStack.vue";
 import { ref, onMounted } from "vue";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useSEO } from "../../shared/composables/useSEO";
 
 gsap.registerPlugin(ScrollTrigger);
+
+// Set SEO meta tags for home page
+useSEO({
+  title: "Home",
+  description: "Rohan Jadav - Full Stack Developer. Browse my portfolio of modern web development projects built with React, Vue.js, JavaScript, and Tailwind CSS.",
+  keywords: "web developer, React projects, Vue.js projects, JavaScript development, portfolio",
+  ogTitle: "Rohan Jadav - Full Stack Developer Portfolio",
+  ogDescription: "Explore featured web development projects and creative web applications",
+  ogImage: "https://rohanportfolio-six.vercel.app/Portfoliopic.png",
+});
 
 // Featured projects
 const featured = [
@@ -15,7 +26,7 @@ const featured = [
     stack: ["HTML", "Tailwind CSS", "JavaScript"],
     image: "./public/RJ.png",
     color: "#61DAFB",
-    desc: "My First Project with the HTML5, Tailwind css and JavaScript. A fully responsive e-commerce website with product category pages.",
+    desc: "RJClothStore is a fully responsive e-commerce web application built with semantic HTML5, modern Tailwind CSS styling, and vanilla JavaScript for dynamic interactions. Features include product category filtering, shopping cart functionality, responsive grid layouts, and a clean user interface optimized for both desktop and mobile devices. This project demonstrates core web development skills including DOM manipulation, event handling, and CSS styling techniques.",
     live: "https://clothe-store-delta.vercel.app/",
     github: "https://github.com/jadavrohan-370/Clothe_Store",
     href: "/projects",
@@ -26,7 +37,7 @@ const featured = [
     stack: ["React.js", "Tailwind CSS"],
     image: "./public/Foorwebsite.png",
     color: "#7F5AF0",
-    desc: "A food website built with React.js and Tailwind CSS. It features a clean, modern design with sections for menu, about, and contact information.",
+    desc: "A modern food and restaurant information website built with React.js and Tailwind CSS. This project features a responsive design showcasing food products, restaurant details, and comprehensive menus. Includes component-based architecture, dynamic content rendering, and a professional layout with dedicated sections for menu items, restaurant information, and customer contact details. Built with component reusability and performance optimization in mind.",
     live: "https://bhartifood.vercel.app/",
     github: "https://github.com/jadavrohan-370/WEBSITEDEMO",
     href: "/projects",
@@ -37,7 +48,7 @@ const featured = [
     stack: ["React.js", "Tailwind CSS", "Routing"],
     image: "./public/Portfoliopic.png",
     color: "#00F5D4",
-    desc: "A personal portfolio website built with React.js and Tailwind CSS. It includes sections for projects, skills, and contact information, showcasing my work and experience.",
+    desc: "A professional portfolio website showcasing web development projects and skills. Built with React.js for dynamic routing and component management, styled with Tailwind CSS for a modern design system. Includes multiple sections: project showcase with filtering, detailed skills and technology stack, about section, and contact information. Demonstrates routing, state management, and responsive web design best practices for frontend development.",
     live: "https://rohan-portfolio-website.vercel.app/",
     github: "https://github.com/jadavrohan-370/Frontendportfolio",
     href: "/projects",
@@ -71,12 +82,12 @@ onMounted(() => {
         >
           <div>
             <span class="section-label">Recent Work</span>
-            <h2
+            <h1
               class="text-5xl md:text-7xl font-black"
               style="letter-spacing: var(--tracking-hero)"
             >
               Featured<br /><span class="text-white/20">Projects</span>
-            </h2>
+            </h1>
           </div>
           <router-link
             to="/projects"
@@ -105,7 +116,7 @@ onMounted(() => {
             <div class="relative aspect-video overflow-hidden">
               <img
                 :src="project.image"
-                :alt="project.title"
+                :alt="`${project.title} - ${project.category} project screenshot`"
                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-1000"
               />
               <div

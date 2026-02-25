@@ -1,0 +1,22 @@
+# Robots.txt for Rohan Jadav Portfolio
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+Disallow: /node_modules/
+Disallow: /*.json
+Disallow: *.mp4
+Disallow: *.avi
+
+# Specific rules for Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Specific rules for Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://yourdomain.com/sitemap.xml

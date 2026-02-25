@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { reactive, ref } from "vue";
+import { useSEO } from "../../shared/composables/useSEO";
 import {
   Mail,
   Briefcase,
@@ -7,6 +8,17 @@ import {
   MapPin,
   PartyPopper,
 } from "lucide-vue-next";
+
+// Set SEO meta tags for contact page
+useSEO({
+  title: "Contact",
+  description: "Get in touch with Rohan Jadav. Contact me for web development projects, collaborations, or inquiries. I'm available for freelance work and new opportunities.",
+  keywords: "contact developer, hire developer, web development services, freelance developer, contact form",
+  ogTitle: "Contact Rohan Jadav - Full Stack Developer",
+  ogDescription: "Get in touch with me for web development projects and collaborations",
+  ogImage: "https://rohanportfolio-six.vercel.app/Portfoliopic.png",
+  canonical: "https://rohanportfolio-six.vercel.app/contact",
+});
 
 const form = reactive({ name: "", email: "", subject: "", message: "" });
 const errors = reactive({ name: "", email: "", subject: "", message: "" });

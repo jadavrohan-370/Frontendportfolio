@@ -2,6 +2,7 @@
 import { onMounted, ref } from "vue";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useSEO } from "../../shared/composables/useSEO";
 import {
   Flame,
   BookOpen,
@@ -15,6 +16,17 @@ import {
 } from "lucide-vue-next";
 
 gsap.registerPlugin(ScrollTrigger);
+
+// Set SEO meta tags for about page
+useSEO({
+  title: "About",
+  description: "Learn about Rohan Jadav's journey as a Full Stack Developer. From curious learner to professional developer, discover my skills, experience, and passion for building modern web applications.",
+  keywords: "about developer, Rohan Jadav, web developer journey, developer experience, frontend developer, full stack developer",
+  ogTitle: "About Rohan Jadav - Full Stack Developer",
+  ogDescription: "Discover my journey into web development and my expertise",
+  ogImage: "https://rohanportfolio-six.vercel.app/Portfoliopic.png",
+  canonical: "https://rohanportfolio-six.vercel.app/about",
+});
 
 const heroRef = ref<HTMLElement | null>(null);
 const timelineRef = ref<HTMLElement | null>(null);
